@@ -882,3 +882,77 @@ export const Dropdown = () => {
     </Svg>
   );
 };
+
+export const UpArrow = () => {
+  return (
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <Path
+        d="M18.0004 15.0001L12.0004 9.00007L6.00037 15.0001"
+        stroke="black"
+        stroke-opacity="0.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </Svg>
+  );
+};
+
+export const downArrow = () => {
+  return (
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <G clip-path="url(#clip0_638_3417)">
+        <Path
+          d="M6 9L12 15L18 9"
+          stroke="black"
+          stroke-opacity="0.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </G>
+      <Defs>
+        <ClipPath id="clip0_638_3417">
+          <Rect width="24" height="24" fill="white" />
+        </ClipPath>
+      </Defs>
+    </Svg>
+  );
+};
+
+export const Checkmark = () => {
+  return (
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+    >
+      <G clip-path="url(#clip0_978_330)">
+        <Path
+          d="M4.16663 10.1666L8.33329 14.3333L16.6666 5.99997"
+          stroke="black"
+          stroke-opacity="0.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </G>
+      <Defs>
+        <ClipPath id="clip0_978_330">
+          <Rect width="20" height="20" fill="white" />
+        </ClipPath>
+      </Defs>
+    </Svg>
+  );
+};
