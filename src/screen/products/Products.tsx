@@ -40,7 +40,7 @@ const Products = () => {
           </View>
           <TouchableOpacity style={productsStyle.threeline}>
             <ThreeLine />
-          </TouchableOpacity>
+        </TouchableOpacity>
         </View>
       </View>
       {/* body container */}
