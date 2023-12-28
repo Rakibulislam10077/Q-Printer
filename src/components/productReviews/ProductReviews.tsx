@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { productReviewsStyle } from "./ProductReviewsStyle";
 import { LinearGradient } from "expo-linear-gradient";
+import LinearButton from "../../Shared/linearButton/LinearButton";
 
 const ProductReviews = () => {
   return (
@@ -60,24 +61,7 @@ const ProductReviews = () => {
             multiline={true}
           />
         </View>
-        <LinearGradient
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          colors={["#C83B62", "#7F35CD"]}
-          style={{
-            width: 150,
-            alignSelf: "flex-end",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: 10,
-          }}
-        >
-          <TouchableOpacity style={productReviewsStyle.submitButtonContainer}>
-            <Text style={productReviewsStyle.submitButtonText}>
-              Submit Review
-            </Text>
-          </TouchableOpacity>
-        </LinearGradient>
+       <LinearButton children="Pay now"/>
       </View>
     </View>
   );

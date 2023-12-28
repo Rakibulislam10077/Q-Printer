@@ -15,9 +15,12 @@ import { Checkmark, Goback, UpArrow } from "../../constants/allSvg/AllSvg";
 import CommonHeader from "../../components/common/commonHeader/CommonHeader";
 import { paymentMethodStyle } from "./PaymentMethodStyle";
 import { Color } from "../../constants/GlobalStyle";
+import LinearButton from "../../Shared/linearButton/LinearButton";
+import { LinearGradient } from "expo-linear-gradient";
+import { linearButtonStyle } from "../../Shared/linearButton/LinearButtonStyle";
 
 const PaymentMethod = () => {
-  const navigation = useNavigation();
+  const navigation:any = useNavigation();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: Color.C_white }}>
       <CommonHeader title="Checkout" />
@@ -123,8 +126,31 @@ const PaymentMethod = () => {
           </View>
         </View>
       </ScrollView>
-      <View>
-        
+      <View style={paymentMethodStyle.ammountCon}>
+        <View>
+          <Text style={paymentMethodStyle.totalAmount}>Total Amount</Text>
+          <Text style={paymentMethodStyle.currency}>QR 4545.00</Text>
+        </View>
+        <View>
+        <LinearGradient
+    start={{ x: 0, y: 0 }}
+    end={{ x: 1, y: 1 }}
+    colors={["#C83B62", "#7F35CD"]}
+    style={{
+      width: 150,
+      alignSelf: "flex-end",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: 25,
+    }}
+  >
+    <TouchableOpacity style={linearButtonStyle.submitButtonContainer}>
+      <Text onPress={() => navigation.navigate('confirmorder')} style={linearButtonStyle.submitButtonText}>
+        Pay Now
+      </Text>
+    </TouchableOpacity>
+  </LinearGradient>
+        </View>
       </View>
     </SafeAreaView>
   );

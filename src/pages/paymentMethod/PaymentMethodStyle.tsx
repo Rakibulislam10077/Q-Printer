@@ -133,5 +133,33 @@ export const paymentMethodStyle = StyleSheet.create({
   },
   checkmarkText:{
     fontSize: Font.Font_S,
+  },
+  ammountCon:{
+    height: 90,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    shadowColor: Color.C_shadow,
+    elevation: 15,
+    shadowOffset: {
+      width: 0,
+      height: -15,
+    },
+    shadowOpacity: .1,
+    shadowRadius: 10,
+    backgroundColor:Color.C_white,
+    flexDirection: 'row',
+    alignItems:'center',
+    justifyContent:'space-between',
+    paddingHorizontal: 20,
+  },
+  totalAmount:{
+    color: Color.C_H_black,
+    fontSize: Font.Font_M,
+    marginBottom: 10
+  },
+  currency:{
+    fontSize: Font.Font_X,
+    fontWeight: '700',
+    color:Color.C_main
   }
 });

@@ -8,13 +8,12 @@ import Brand from '../../screen/Brand/Brand';
 import Notification from '../../screen/notification/Notification';
 import Profile from '../../screen/profile/Profile';
 import HomePage from '../../pages/homePage/HomePage';
-import SearchPage from '../../pages/searchPage/SearchPage';
-import ProductDetailsPage from '../../pages/productDetailsPage/ProductDetailsPage';
 import ProductDetails from '../../pages/productDetailsPage/ProductDetails';
 import Search from '../../pages/search/Search';
 import MyCart from '../../pages/myCart/MyCart';
 import Summery from '../../pages/summery/Summery';
 import PaymentMethod from '../../pages/paymentMethod/PaymentMethod';
+import ConfirmOrder from '../../pages/confirmOrder/ConfirmOrder';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -22,7 +21,18 @@ const Tab = createBottomTabNavigator();
 const BottomTab = () =>{
 
       return (
-        <Tab.Navigator>
+        <Tab.Navigator
+        screenOptions={{
+          tabBarShowLabel: false,
+          tabBarStyle: {
+            height: 60,
+            shadowColor: "#000",
+            elevation: 13,
+            borderTopColor: "#fff",
+          },
+          tabBarHideOnKeyboard: true,
+        }}
+        >
           <Tab.Screen options={{headerShown:false}} name="Home" component={Home} />
           <Tab.Screen  options={{headerShown:false}} name="Products" component={Products} />
           <Tab.Screen  options={{headerShown:false}} name="Brand" component={Brand} />
@@ -45,6 +55,7 @@ const Index = () => {
           <Stack.Screen options={{headerShown:false}} name="MyCart" component={MyCart} />
           <Stack.Screen options={{headerShown:false}} name="Summery" component={Summery} />
           <Stack.Screen options={{headerShown:false}} name="Payment" component={PaymentMethod} />
+          <Stack.Screen options={{headerShown:false}} name="confirmorder" component={ConfirmOrder} />
         </Stack.Navigator>
       );
     }

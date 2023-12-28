@@ -956,3 +956,58 @@ export const Checkmark = () => {
     </Svg>
   );
 };
+
+export const SuccessPageLogo =() =>{
+  return(
+    <Svg width="243" height="143" viewBox="0 0 243 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+<Circle cx="122" cy="93" r="50" fill="#E9F9F2"/>
+<Circle cx="122" cy="93" r="40" fill="#20BE79"/>
+<G clip-path="url(#clip0_638_3072)">
+<Path d="M106.25 93L117.5 104.25L140 81.75" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</G>
+<G clip-path="url(#clip1_638_3072)">
+<Path d="M16.1933 77.7266L10.7311 79.1978" stroke="#CA00B6" stroke-linecap="round" stroke-linejoin="round"/>
+<Path d="M12.7266 75.7311L14.1978 81.1933" stroke="#CA00B6" stroke-linecap="round" stroke-linejoin="round"/>
+</G>
+<G clip-path="url(#clip2_638_3072)">
+<Path d="M24.8101 42.7749L21.6034 43.6386" stroke="#12305D" stroke-linecap="round" stroke-linejoin="round"/>
+<Path d="M22.7749 41.6034L23.6386 44.8101" stroke="#12305D" stroke-linecap="round" stroke-linejoin="round"/>
+</G>
+<G clip-path="url(#clip3_638_3072)">
+<Path d="M188.324 4.22497L183.441 5.54004" stroke="#20BE79" stroke-linecap="round" stroke-linejoin="round"/>
+<Path d="M185.225 2.44125L186.54 7.32376" stroke="#20BE79" stroke-linecap="round" stroke-linejoin="round"/>
+</G>
+<G clip-path="url(#clip4_638_3072)">
+<Path d="M220.594 41.7771L217.531 42.602" stroke="black" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+<Path d="M218.65 40.6583L219.475 43.7208" stroke="black" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+</G>
+<Path d="M199.5 69.1271L205 64.1271V71.6271L199.5 69.1271Z" stroke="#0015D1"/>
+<Path d="M238.5 107.627L242 114.627L233 114.627L238.5 107.627Z" stroke="#36F09F"/>
+<Circle cx="17" cy="133" r="5.5" stroke="#36F09F"/>
+<Circle cx="56.5" cy="96.5" r="3" stroke="#D76700"/>
+<Circle cx="165.5" cy="31.6271" r="3" stroke="#460D54"/>
+<Circle cx="4" cy="111" r="3.5" stroke="#C9B500"/>
+<Circle cx="57" cy="38" r="3.5" stroke="#36F09F"/>
+<Circle cx="17.5" cy="27.5" r="2.5" fill="#A0C800"/>
+<Circle cx="235" cy="82.1271" r="4.5" stroke="#CA00B6"/>
+<Defs>
+<ClipPath id="clip0_638_3072">
+<Rect width="54" height="54" fill="white" transform="translate(95 66)"/>
+</ClipPath>
+<ClipPath id="clip1_638_3072">
+<Rect width="8" height="8" fill="white" transform="translate(11.991 73) rotate(29.9255)"/>
+</ClipPath>
+<ClipPath id="clip2_638_3072">
+<Rect width="4.69667" height="4.69667" fill="white" transform="translate(22.343 40) rotate(29.9255)"/>
+</ClipPath>
+<ClipPath id="clip3_638_3072">
+<Rect width="7.15099" height="7.15099" fill="white" transform="translate(184.567) rotate(29.9255)"/>
+</ClipPath>
+<ClipPath id="clip4_638_3072">
+<Rect width="4.48539" height="4.48539" fill="white" transform="translate(218.238 39.1271) rotate(29.9255)"/>
+</ClipPath>
+</Defs>
+</Svg>
+
+  )
+}
