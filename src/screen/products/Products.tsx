@@ -12,7 +12,6 @@ import {
   Magnify,
   ThreeLine,
 } from "../../constants/allSvg/AllSvg";
-import { Portal } from "react-native-paper";
 import { TopTab } from "../../routes/topTab/TopTab";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";

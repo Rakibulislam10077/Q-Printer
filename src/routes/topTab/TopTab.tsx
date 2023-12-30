@@ -10,7 +10,7 @@ const Tab = createMaterialTopTabNavigator();
 const DimensionsWidth = Dimensions.get("window").width;
 export const TopTab = () => {
   return (
-     <View style={{flex: 1}}>
+     <View style={{flex: 1, backgroundColor:'#fff'}}>
        <Tab.Navigator>
         <Tab.Screen name="all" component={All} />
         <Tab.Screen name="Printer" component={Printer} />

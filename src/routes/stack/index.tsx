@@ -14,6 +14,8 @@ import MyCart from '../../pages/myCart/MyCart';
 import Summery from '../../pages/summery/Summery';
 import PaymentMethod from '../../pages/paymentMethod/PaymentMethod';
 import ConfirmOrder from '../../pages/confirmOrder/ConfirmOrder';
+import BrandDetails from '../../pages/brandDetails/BrandDetails';
+import EditProfile from '../../pages/editProfile/EditProfile';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -56,6 +58,8 @@ const Index = () => {
           <Stack.Screen options={{headerShown:false}} name="Summery" component={Summery} />
           <Stack.Screen options={{headerShown:false}} name="Payment" component={PaymentMethod} />
           <Stack.Screen options={{headerShown:false}} name="confirmorder" component={ConfirmOrder} />
+          <Stack.Screen options={{headerShown:false}} name="BrandDetails" component={BrandDetails} />
+          <Stack.Screen options={{headerShown:false}} name="EditProfile" component={EditProfile} />
         </Stack.Navigator>
       );
     }
