@@ -9,10 +9,12 @@ import BrandInHome from "../../components/brandInHome/BrandInHome";
 import Carousel from "../../components/carousel/Carousel";
 import OfferCart from "../../components/cart/offeredCart/OfferCart";
 import AllCart from "../../components/cart/allCart/AllCart";
+import { StatusBar } from "expo-status-bar";
 const HomePage = () => {
   const navigation: any = useNavigation();
   return (
     <View style={{ flex: 1 }}>
+      <StatusBar style="dark" backgroundColor="#fff" />
       <HomePageTopCon />
       {/* Body container */}
       <ScrollView style={{ flex: 1 }}>
@@ -39,7 +41,7 @@ const HomePage = () => {
         {/* offer cart section */}
         <OfferCart />
         {/* all cart*/}
-        <AllCart/>
+        <AllCart />
       </ScrollView>
     </View>
   );
