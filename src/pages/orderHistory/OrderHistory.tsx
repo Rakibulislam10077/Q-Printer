@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { orderHistoryStyle } from "./OrderHistoryStyle";
 import CommonHeader from "../../components/common/commonHeader/CommonHeader";
-import { navigation } from "../../constants/orderHistoryNav/orderHCustomNav";
 import { logFunc } from "../../utils/log";
 import { Color } from "../../constants/GlobalStyle";
-import Order_placed from "../../components/order_placed/Order_placed";
+import Order_placed from "../../components/orderHistoryComponents/order_placed/Order_placed";
+import { navigation } from "../../constants/orderHis/orderHCustomNav";
+import Packaging from "../../components/orderHistoryComponents/Packeaging/Packaging";
+import Shipping from "../../components/orderHistoryComponents/shipping/Shipping";
+import OrderReview from "../../components/orderHistoryComponents/ordeReview/OrderReview";
 const OrderHistory = () => {
-  const [activeTab, setActiveTab] = useState(null);
+  const [activeTab, setActiveTab] = useState<number>(101);
   // const [activeTabIndex, setActiveTabIndex] = useState<any>(navigation?.map(i) => i?.id);
   const toggleTab = (activeTab: any) => {
     // setActiveTabIndex(1)
@@ -48,7 +51,15 @@ const OrderHistory = () => {
             )}
           />
         </View>
-        {activeTab?.id === 101 ? <Order_placed /> : <Text>sorry</Text>}
+        {activeTab?.id === 101 ? (
+          <Order_placed />
+        ) : activeTab?.id === 102 ? (
+          <Packaging />
+        ) : activeTab?.id === 103 ? (
+          <Shipping />
+        ) : (
+          activeTab?.id === 104 && <OrderReview />
+        )}
       </View>
     </SafeAreaView>
   );
