@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { Color, Font } from "./src/constants/GlobalStyle";
+import { Color, Font } from "../../constants/GlobalStyle";
 
 export const favoriteStyle = StyleSheet.create({
   container: {

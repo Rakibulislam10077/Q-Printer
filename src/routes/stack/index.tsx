@@ -19,6 +19,8 @@ import EditProfile from "../../pages/editProfile/EditProfile";
 import Favorite from "../../pages/favorite/Favorite";
 import TermsAndCondition from "../../pages/termsAndCondition/TermsAndCondition";
 import FAQ from "../../pages/FAQ/FAQ";
+import Review from "../../pages/review/Review";
+import OrderHistory from "../../pages/orderHistory/OrderHistory";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -116,6 +118,11 @@ const Index = () => {
       />
       <Stack.Screen
         options={{ headerShown: false }}
+        name="NotificationPage"
+        component={Notification}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
         name="EditProfile"
         component={EditProfile}
       />
@@ -138,6 +145,16 @@ const Index = () => {
         options={{ headerShown: false }}
         name="FAQ"
         component={FAQ}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name="Review"
+        component={Review}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name="OrderHistory"
+        component={OrderHistory}
       />
     </Stack.Navigator>
   );

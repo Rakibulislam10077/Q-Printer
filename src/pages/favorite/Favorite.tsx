@@ -2,7 +2,7 @@ import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CommonHeader from "../../components/common/commonHeader/CommonHeader";
-import { favoriteStyle } from "../../../FavoriteStyle";
+import { favoriteStyle } from "./FavoriteStyle";
 import FavoriteCart from "../../components/favoriteCartComponents/FavoriteCart";
 import { Font } from "../../constants/GlobalStyle";
 

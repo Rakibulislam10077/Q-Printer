@@ -86,6 +86,7 @@ const Profile = () => {
         <View style={profileStyle.bodyCon}>
           <ScrollView showsVerticalScrollIndicator={false}>
             <TouchableOpacity
+              onPress={() => navigation.navigate("OrderHistory")}
               activeOpacity={0.7}
               style={profileStyle.routeItemCon}
             >
@@ -97,6 +98,7 @@ const Profile = () => {
             </TouchableOpacity>
             {/* ============ end here =========== */}
             <TouchableOpacity
+              onPress={() => navigation.navigate("Review")}
               activeOpacity={0.7}
               style={profileStyle.routeItemCon}
             >
@@ -109,7 +111,7 @@ const Profile = () => {
             </TouchableOpacity>
             {/* ============ end here =========== */}
             <TouchableOpacity
-              onPress={() => navigation.navigate("Notification")}
+              onPress={() => navigation.navigate("NotificationPage")}
               activeOpacity={0.7}
               style={profileStyle.routeItemCon}
             >
