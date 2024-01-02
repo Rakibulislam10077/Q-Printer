@@ -21,6 +21,7 @@ import TermsAndCondition from "../../pages/termsAndCondition/TermsAndCondition";
 import FAQ from "../../pages/FAQ/FAQ";
 import Review from "../../pages/review/Review";
 import OrderHistory from "../../pages/orderHistory/OrderHistory";
+import TrackedOrderDetails from "../../pages/trackedOrderDtails/TrackedOrderDetails";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -155,6 +156,11 @@ const Index = () => {
         options={{ headerShown: false }}
         name="OrderHistory"
         component={OrderHistory}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name="TrackedOrderDetails"
+        component={TrackedOrderDetails}
       />
     </Stack.Navigator>
   );

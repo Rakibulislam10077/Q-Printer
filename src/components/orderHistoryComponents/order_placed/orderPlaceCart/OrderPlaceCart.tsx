@@ -3,8 +3,10 @@ import React from "react";
 import { orderPlaceCartStyle } from "./OrderPlaceCartStyle";
 import { Divider } from "react-native-paper";
 import { LinearGradient } from "expo-linear-gradient";
+import { useNavigation } from "@react-navigation/native";
 
 const OrderPlaceCart = () => {
+  const navigation: any = useNavigation();
   return (
     <View style={orderPlaceCartStyle.container}>
       {/* top section */}
@@ -59,6 +61,7 @@ const OrderPlaceCart = () => {
           style={orderPlaceCartStyle.trackButtonLinear}
         >
           <TouchableOpacity
+            onPress={() => navigation.navigate("TrackedOrderDetails")}
             activeOpacity={0.7}
             style={orderPlaceCartStyle.trackButtonActionLayer}
           >
