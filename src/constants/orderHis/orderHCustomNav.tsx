@@ -6,19 +6,19 @@ export interface INavigation {
 }
 export const navigation: INavigation[] = [
   {
-    id: 101,
+    id: 0,
     name: "Order Placed",
   },
   {
-    id: 102,
+    id: 1,
     name: "Packaging",
   },
   {
-    id: 103,
+    id: 2,
     name: "Shipped",
   },
   {
-    id: 104,
+    id: 3,
     name: "Order Receive",
   },
 ];

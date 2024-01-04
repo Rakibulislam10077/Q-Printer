@@ -19,7 +19,7 @@ const ConfirmOrder = () => {
   return (
     <SafeAreaView style={confirmOrderStyle.container}>
       <CommonHeader title="Booking Confirmation" />
-      <ScrollView>
+      <ScrollView style={{ flex: 1, paddingBottom: 100 }}>
         <View style={confirmOrderStyle.bodyContainer}>
           <View style={confirmOrderStyle.logoContainer}>
             <SuccessPageLogo />
@@ -85,23 +85,25 @@ const ConfirmOrder = () => {
         </View>
       </ScrollView>
       <LinearGradient
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            colors={["#C83B62", "#7F35CD"]} 
-            style={{
-              width: '90%',
-              alignSelf: "center",
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: 25,
-              position:'absolute',
-              bottom: 30,
-            }}
-          >
-            <TouchableOpacity style={linearButtonStyle.submitButtonContainer}>
-              <Text style={linearButtonStyle.submitButtonText}>Okay</Text>
-            </TouchableOpacity>
-          </LinearGradient>
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        colors={["#C83B62", "#7F35CD"]}
+        style={{
+          width: "90%",
+          alignSelf: "center",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: 25,
+          // position: "absolute",
+          // bottom: 30,
+          marginVertical: 30,
+          backgroundColor: "transparent",
+        }}
+      >
+        <TouchableOpacity style={linearButtonStyle.submitButtonContainer}>
+          <Text style={linearButtonStyle.submitButtonText}>Okay</Text>
+        </TouchableOpacity>
+      </LinearGradient>
     </SafeAreaView>
   );
 };

@@ -11,13 +11,22 @@ import Packaging from "../../components/orderHistoryComponents/Packeaging/Packag
 import Shipping from "../../components/orderHistoryComponents/shipping/Shipping";
 import OrderReview from "../../components/orderHistoryComponents/ordeReview/OrderReview";
 const OrderHistory = () => {
-  const [activeTab, setActiveTab] = useState<number>(101);
+  const [activeTab, setActiveTab] = useState<null>(null);
+  const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
   // const [activeTabIndex, setActiveTabIndex] = useState<any>(navigation?.map(i) => i?.id);
   const toggleTab = (activeTab: any) => {
     // setActiveTabIndex(1)
     console.log(activeTab?.id);
-
     setActiveTab(activeTab);
+    if (activeTab?.id === 0) {
+      setActiveTabIndex(0);
+    } else if (activeTab?.id === 1) {
+      setActiveTabIndex(1);
+    } else if (activeTab?.id === 2) {
+      setActiveTabIndex(2);
+    } else {
+      setActiveTabIndex(3);
+    }
   };
   return (
     <SafeAreaView style={orderHistoryStyle.container}>
@@ -35,7 +44,7 @@ const OrderHistory = () => {
               <TouchableOpacity
                 onPress={() => toggleTab(item)}
                 style={
-                  item?.id === activeTab?.id
+                  item?.id === activeTabIndex
                     ? [
                         orderHistoryStyle.navItem,
                         {
@@ -51,14 +60,14 @@ const OrderHistory = () => {
             )}
           />
         </View>
-        {activeTab?.id === 101 ? (
+        {activeTabIndex === 0 ? (
           <Order_placed />
-        ) : activeTab?.id === 102 ? (
+        ) : activeTabIndex === 1 ? (
           <Packaging />
-        ) : activeTab?.id === 103 ? (
+        ) : activeTabIndex === 2 ? (
           <Shipping />
         ) : (
-          activeTab?.id === 104 && <OrderReview />
+          activeTabIndex === 3 && <OrderReview />
         )}
       </View>
     </SafeAreaView>
