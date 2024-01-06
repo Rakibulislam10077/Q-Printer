@@ -122,7 +122,7 @@ export const productDetailsStyle = StyleSheet.create({
     width: "47.5%",
     height: 70,
     flexDirection: "row",
-    borderColor: "rgba(0, 0, 0, 0.10)",
+    borderColor: Color.C_border,
     borderWidth: 1,
     borderRadius: 8,
     padding: 5,
@@ -131,7 +131,7 @@ export const productDetailsStyle = StyleSheet.create({
   },
   highLightedInfoItemLogoCon: {
     borderWidth: 1,
-    borderColor: Color.C_H_black,
+    borderColor: Color.C_border,
     borderRadius: 5,
     alignItems: "center",
     justifyContent: "center",
@@ -155,8 +155,8 @@ export const productDetailsStyle = StyleSheet.create({
     borderBottomWidth: 1,
     marginHorizontal: 20,
   },
-  specTitle:{
-color: Color.C_main
+  specTitle: {
+    color: Color.C_main,
   },
   activeNavigation: {
     borderBottomColor: "#7F35CD ",
@@ -187,12 +187,12 @@ color: Color.C_main
     shadowColor: "#000",
     elevation: 30,
     width: "100%",
-    shadowOffset:{
-width: 4,
-height: -2,
+    shadowOffset: {
+      width: 2,
+      height: 1,
     },
-    shadowOpacity: .1,
     shadowRadius: 5,
+    shadowOpacity: 0.2,
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",

@@ -3,7 +3,7 @@ import { Color, Font } from "../../constants/GlobalStyle";
 
 export const profileStyle = StyleSheet.create({
   headerContainer: {
-    height: 70,
+    height: 60,
     flexDirection: "row",
     alignItems: "center",
     paddingLeft: 20,

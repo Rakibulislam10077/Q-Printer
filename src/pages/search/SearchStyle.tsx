@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
 import { Color, Font } from "../../constants/GlobalStyle";
 
-
 export const searchStyle = StyleSheet.create({
   container: {
     flex: 1,
@@ -17,8 +16,8 @@ export const searchStyle = StyleSheet.create({
     paddingHorizontal: 10,
   },
   AddToCartContainer: {
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     borderRadius: 50,
     borderWidth: 1,
     borderColor: Color.C_border,
@@ -30,7 +29,7 @@ export const searchStyle = StyleSheet.create({
     backgroundColor: Color.C_white,
     borderRadius: 50,
     flex: 1,
-    height: 50,
+    height: 40,
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 10,

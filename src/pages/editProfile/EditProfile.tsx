@@ -26,7 +26,7 @@ const EditProfile = () => {
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
         colors={["#C83B62", "#7F35CD"]}
-        style={{ flex: 1, paddingTop: Platform.OS === "ios" ? 40 : 30 }}
+        style={{ flex: 1, paddingTop: Platform.OS === "ios" ? 30 : 30 }}
       >
         {/* header section */}
         <View style={profileStyle.headerContainer}>

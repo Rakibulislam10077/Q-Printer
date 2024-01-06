@@ -9,7 +9,6 @@ import {
 import React from "react";
 import { productReviewsStyle } from "./ProductReviewsStyle";
 import { LinearGradient } from "expo-linear-gradient";
-import LinearButton from "../../Shared/linearButton/LinearButton";
 
 const ProductReviews = () => {
   return (
@@ -61,7 +60,6 @@ const ProductReviews = () => {
             multiline={true}
           />
         </View>
-       <LinearButton children="Pay now"/>
       </View>
     </View>
   );

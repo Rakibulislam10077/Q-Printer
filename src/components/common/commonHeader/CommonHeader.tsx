@@ -1,21 +1,32 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { BackArrow } from '../../../constants/allSvg/AllSvg'
-import { commonHeaderStyle } from './CommonHeaderStyle'
-import { useNavigation } from '@react-navigation/native'
+import { View, Text, TouchableOpacity } from "react-native";
+import React from "react";
+import { BackArrow, CartIcon } from "../../../constants/allSvg/AllSvg";
+import { commonHeaderStyle } from "./CommonHeaderStyle";
+import { useNavigation } from "@react-navigation/native";
 
-const CommonHeader = ({title}:{title:any}) => {
-  const navigation = useNavigation();
+const CommonHeader = ({ title }: { title: any }) => {
+  const navigation: any = useNavigation();
   return (
     <View style={commonHeaderStyle.container}>
-     <TouchableOpacity style={commonHeaderStyle.backButton} activeOpacity={.7}
-     onPress={() => navigation.goBack()}
-     >
-     <BackArrow/>
-     </TouchableOpacity>
-      <Text style={commonHeaderStyle.title}>{title}</Text>
+      <View style={commonHeaderStyle.titleCon}>
+        <TouchableOpacity
+          style={commonHeaderStyle.backButton}
+          activeOpacity={0.7}
+          onPress={() => navigation.goBack()}
+        >
+          <BackArrow />
+        </TouchableOpacity>
+        <Text style={commonHeaderStyle.title}>{title}</Text>
+      </View>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("MyCart")}
+        activeOpacity={0.7}
+        style={commonHeaderStyle.cartIcon}
+      >
+        <CartIcon />
+      </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
-export default CommonHeader
+export default CommonHeader;

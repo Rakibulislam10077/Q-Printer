@@ -22,6 +22,7 @@ import { MD3Colors, ProgressBar } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import CommonHeader from "../../components/common/commonHeader/CommonHeader";
+import { commonHeaderStyle } from "../../components/common/commonHeader/CommonHeaderStyle";
 
 const progress = 0.1;
 const width = 200;
@@ -29,7 +30,20 @@ const MyCart = () => {
   const navigation: any = useNavigation();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
-      <CommonHeader title="My Cart" />
+      {/* cart container */}
+      <View style={commonHeaderStyle.container}>
+        <View style={commonHeaderStyle.titleCon}>
+          <TouchableOpacity
+            style={commonHeaderStyle.backButton}
+            activeOpacity={0.7}
+            onPress={() => navigation.goBack()}
+          >
+            <BackArrow />
+          </TouchableOpacity>
+          <Text style={commonHeaderStyle.title}>My Cart</Text>
+        </View>
+        {/* =========================== */}
+      </View>
       <FlatList
         data={[1, 1, 1, 1, 1, 1, 1]}
         renderItem={({ i }: any) => {
@@ -99,5 +113,3 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-
-

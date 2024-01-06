@@ -8,6 +8,7 @@ export const homePageCateTitleStyle = StyleSheet.create({
     marginBottom: 20,
     marginTop: 10,
     width: "100%",
+    alignItems: "center",
   },
   title: { fontSize: Font.Font_X, fontWeight: "500" },
   subTitle: { fontSize: 14, color: Color.C_H_black },

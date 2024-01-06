@@ -20,6 +20,7 @@ import { Divider } from "react-native-paper";
 import { LinearGradient } from "expo-linear-gradient";
 import CommonHeader from "../../components/common/commonHeader/CommonHeader";
 import { Color } from "../../constants/GlobalStyle";
+import Animated, { FadeInUp } from "react-native-reanimated";
 
 const Summery: React.FC = () => {
   const navigation: any = useNavigation();
@@ -31,6 +32,7 @@ const Summery: React.FC = () => {
       {/* ===== body content======= */}
       <ScrollView>
         <View style={{ paddingTop: 20, paddingBottom: 100 }}>
+          {/* summery item box */}
           <View style={summeryStyle.topSummeryBox}>
             <Text style={summeryStyle.summeryTitle}>Order Summary</Text>
             <View style={summeryStyle.summeryItemBox}>
@@ -66,6 +68,7 @@ const Summery: React.FC = () => {
               <Text style={summeryStyle.summeryCurrency}>QR 4545.00</Text>
             </View>
           </View>
+          {/* location box */}
           <View style={summeryStyle.shiptoBox}>
             <Text style={summeryStyle.shipToText}>Ship to</Text>
             <View
@@ -96,7 +99,10 @@ const Summery: React.FC = () => {
               </Text>
             </TouchableOpacity>
             {isDown && (
-              <View style={{ marginTop: 20 }}>
+              <Animated.View
+                // entering={FadeInUp.delay(50).duration(500)}
+                style={{ marginTop: 20 }}
+              >
                 <View style={summeryStyle.nameInputContainer}>
                   <TextInput
                     style={summeryStyle.nameInput}
@@ -160,7 +166,7 @@ const Summery: React.FC = () => {
                     Save as default address
                   </Text>
                 </TouchableOpacity>
-              </View>
+              </Animated.View>
             )}
           </View>
         </View>

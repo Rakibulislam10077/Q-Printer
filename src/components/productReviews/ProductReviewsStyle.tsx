@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
 import { Color, Font } from "../../constants/GlobalStyle";
 
-
 export const productReviewsStyle = StyleSheet.create({
   ratingViewBox: {
     paddingTop: 20,
@@ -9,12 +8,12 @@ export const productReviewsStyle = StyleSheet.create({
     marginTop: 10,
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderBottomColor: Color.C_H_black,
+    borderBottomColor: Color.C_border,
     paddingBottom: 20,
   },
   averageRatingPoinTBox: {
     borderRightWidth: 1,
-    borderRightColor: Color.C_H_black,
+    borderRightColor: Color.C_border,
     flex: 1,
   },
   ratingProgressBox: {
@@ -57,7 +56,7 @@ export const productReviewsStyle = StyleSheet.create({
     resizeMode: "contain",
     marginRight: 10,
     borderWidth: 1,
-    borderColor: Color.C_H_black,
+    borderColor: Color.C_border,
   },
   reviewerNameAndDate: {},
   reviewerName: {
@@ -88,7 +87,7 @@ export const productReviewsStyle = StyleSheet.create({
     height: 40,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: Color.C_H_black,
+    borderColor: Color.C_border,
     paddingLeft: 10,
     marginBottom: 15,
   },
@@ -97,9 +96,8 @@ export const productReviewsStyle = StyleSheet.create({
     paddingBottom: 40,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: Color.C_H_black,
+    borderColor: Color.C_border,
     paddingLeft: 10,
     marginBottom: 15,
   },
- 
 });

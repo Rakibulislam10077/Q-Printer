@@ -11,11 +11,11 @@ export const favoriteCartStyle = StyleSheet.create({
     shadowColor: Color.C_shadow,
     elevation: 15,
     shadowOffset: {
-      width: 1,
-      height: 2,
+      width: 2,
+      height: 1,
     },
+    shadowRadius: 5,
     shadowOpacity: 0.2,
-    shadowRadius: 6,
     backgroundColor: Color.C_white,
   },
   itemCon: {
@@ -25,7 +25,7 @@ export const favoriteCartStyle = StyleSheet.create({
     width: 90,
     height: 90,
     borderRadius: 8,
-    borderColor: "rgba(35, 63, 163, 0.08)",
+    borderColor: Color.C_border,
     borderWidth: 1,
     padding: 10,
     alignItems: "center",
@@ -47,6 +47,7 @@ export const favoriteCartStyle = StyleSheet.create({
     borderWidth: 1,
     borderColor: Color.C_border,
     borderRadius: 25,
+    backgroundColor: Color.C_white,
   },
   allText: {
     flex: 1,

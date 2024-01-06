@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import { Color, Font } from "../../constants/GlobalStyle";
 
 export const summeryStyle = StyleSheet.create({
@@ -20,6 +20,12 @@ export const summeryStyle = StyleSheet.create({
     backgroundColor: Color.C_white,
     marginBottom: 20,
     padding: 20,
+    shadowOffset: {
+      width: 2,
+      height: 1,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
   },
   summeryTitle: {
     fontSize: Font.Font_X,
@@ -33,9 +39,9 @@ export const summeryStyle = StyleSheet.create({
     paddingBottom: 15,
   },
   borderBottomStyle: {
-    borderStyle: "dashed",
+    borderStyle: Platform.OS === "ios" ? "solid" : "dashed",
     borderBottomWidth: 1,
-    borderBottomColor: Color.C_H_black,
+    borderBottomColor: Color.C_border,
   },
 
   summeryItemNormalText: { fontSize: Font.Font_L, color: "rgba(0,0,0,0.7)" },
@@ -64,6 +70,12 @@ export const summeryStyle = StyleSheet.create({
     elevation: 15,
     backgroundColor: Color.C_white,
     padding: 20,
+    shadowOffset: {
+      width: 2,
+      height: 1,
+    },
+    shadowRadius: 5,
+    shadowOpacity: 0.2,
   },
   shipToItem: {
     flexDirection: "row",
@@ -85,7 +97,7 @@ export const summeryStyle = StyleSheet.create({
     height: 20,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: Color.C_H_black,
+    borderColor: Color.C_border,
   },
   nameInputContainer: {
     flexDirection: "row",
@@ -99,12 +111,12 @@ export const summeryStyle = StyleSheet.create({
     paddingHorizontal: 10,
     fontSize: 18,
     flex: 1,
-    borderColor: Color.C_H_black,
+    borderColor: Color.C_border,
     borderWidth: 1,
   },
   inputBox: {
     borderWidth: 1,
-    borderColor: Color.C_H_black,
+    borderColor: Color.C_border,
     borderRadius: 10,
     height: 40,
     width: "100%",
@@ -124,7 +136,7 @@ export const summeryStyle = StyleSheet.create({
     paddingHorizontal: 10,
     fontSize: 18,
     width: "100%",
-    borderColor: Color.C_H_black,
+    borderColor: Color.C_border,
     borderWidth: 1,
     marginTop: 14,
   },

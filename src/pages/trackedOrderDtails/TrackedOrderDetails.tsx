@@ -24,7 +24,7 @@ const TrackedOrderDetails = () => {
       <CommonHeader title="Track Your Order" />
       {/* body section */}
       <ScrollView>
-        <View>
+        <View style={{ marginBottom: 100 }}>
           {/* customer details */}
           <CustomerDetailsContainer />
           {/* order step container */}

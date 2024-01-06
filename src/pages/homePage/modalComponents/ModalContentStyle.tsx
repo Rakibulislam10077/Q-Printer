@@ -1,0 +1,77 @@
+import { StyleSheet } from "react-native";
+import { Color, Font } from "../../../constants/GlobalStyle";
+
+export const modalStyle = StyleSheet.create({
+  container: {
+    // height: 400,
+    borderTopRightRadius: 25,
+    borderTopLeftRadius: 25,
+    backgroundColor: Color.C_white,
+    paddingHorizontal: 25,
+  },
+  modalIndicator: {
+    height: 6,
+    width: 50,
+    borderRadius: 5,
+    backgroundColor: "rgba(0,0,0,0.1)",
+    marginTop: 10,
+    marginBottom: 20,
+    alignSelf: "center",
+  },
+  title: {
+    fontSize: Font.Font_XL,
+    fontWeight: "700",
+    color: Color.C_black_eight,
+    marginBottom: 15,
+  },
+  subTitle: {
+    fontSize: Font.Font_L,
+    color: Color.C_H_black,
+    marginBottom: 20,
+  },
+  inputBoxMainCon: {
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: Color.C_border,
+    height: 300,
+    marginBottom: 20,
+    overflow: "hidden",
+  },
+  activeInputBox: {
+    width: "100%",
+    height: 45,
+    paddingHorizontal: 10,
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    // marginBottom: 10,
+  },
+  inputBox: {
+    width: "100%",
+    height: 45,
+    borderRadius: 8,
+    borderColor: Color.C_border,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    marginBottom: 40,
+  },
+  input: {
+    height: 40,
+    paddingHorizontal: 10,
+    fontSize: Font.Font_L,
+    borderWidth: 1,
+    borderColor: Color.C_border,
+    borderRadius: 8,
+    width: "98%",
+    alignSelf: "center",
+  },
+  filteredItem: {
+    height: 40,
+    paddingHorizontal: 10,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+});

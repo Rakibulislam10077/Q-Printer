@@ -8,11 +8,9 @@ import {
 } from "react-native";
 import React from "react";
 import CommonHeader from "../../components/common/commonHeader/CommonHeader";
-import { Color } from "../../constants/GlobalStyle";
 import { confirmOrderStyle } from "./ConfirmOrderStyle";
 import { SuccessPageLogo } from "../../constants/allSvg/AllSvg";
 import { Divider } from "react-native-paper";
-import { linearButtonStyle } from "../../Shared/linearButton/LinearButtonStyle";
 import { LinearGradient } from "expo-linear-gradient";
 
 const ConfirmOrder = () => {
@@ -98,10 +96,11 @@ const ConfirmOrder = () => {
           // bottom: 30,
           marginVertical: 30,
           backgroundColor: "transparent",
+          height: 40,
         }}
       >
-        <TouchableOpacity style={linearButtonStyle.submitButtonContainer}>
-          <Text style={linearButtonStyle.submitButtonText}>Okay</Text>
+        <TouchableOpacity style={confirmOrderStyle.buttonActionLayer}>
+          <Text style={confirmOrderStyle.OkeyButtonText}>Okay</Text>
         </TouchableOpacity>
       </LinearGradient>
     </SafeAreaView>

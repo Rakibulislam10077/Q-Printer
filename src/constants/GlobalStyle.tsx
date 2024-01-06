@@ -20,4 +20,5 @@ export const Color = {
   C_red: "#ff0000",
   C_H_black: "rgba(0,0,0,0.5)",
   C_border: "rgba(0, 0, 0, 0.15)",
+  C_black_eight: "rgba(0,0,0,0.8)",
 };

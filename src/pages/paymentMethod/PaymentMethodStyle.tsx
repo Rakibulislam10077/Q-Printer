@@ -25,8 +25,8 @@ export const paymentMethodStyle = StyleSheet.create({
       width: 2,
       height: 1,
     },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
+    shadowRadius: 5,
+    shadowOpacity: 0.2,
   },
   dabidCartTextAndArrowCon: {
     flexDirection: "row",
@@ -113,28 +113,28 @@ export const paymentMethodStyle = StyleSheet.create({
     marginTop: 10,
     height: 50,
     paddingHorizontal: 10,
-    fontSize: Font.Font_L
+    fontSize: Font.Font_L,
   },
-  secureTextCon:{
-    flexDirection: 'row',
+  secureTextCon: {
+    flexDirection: "row",
     marginLeft: 20,
     marginTop: 20,
-    alignItems:'center'
+    alignItems: "center",
   },
-  checkmarkCon:{
+  checkmarkCon: {
     width: 24,
     height: 24,
     borderWidth: 1,
     borderColor: Color.C_border,
     borderRadius: 6,
     marginRight: 10,
-    alignItems:'center',
-    justifyContent:'center'
+    alignItems: "center",
+    justifyContent: "center",
   },
-  checkmarkText:{
+  checkmarkText: {
     fontSize: Font.Font_S,
   },
-  ammountCon:{
+  ammountCon: {
     height: 90,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
@@ -144,22 +144,33 @@ export const paymentMethodStyle = StyleSheet.create({
       width: 0,
       height: -15,
     },
-    shadowOpacity: .1,
+    shadowOpacity: 0.1,
     shadowRadius: 10,
-    backgroundColor:Color.C_white,
-    flexDirection: 'row',
-    alignItems:'center',
-    justifyContent:'space-between',
+    backgroundColor: Color.C_white,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     paddingHorizontal: 20,
   },
-  totalAmount:{
+  totalAmount: {
     color: Color.C_H_black,
     fontSize: Font.Font_M,
-    marginBottom: 10
+    marginBottom: 10,
   },
-  currency:{
+  currency: {
     fontSize: Font.Font_X,
-    fontWeight: '700',
-    color:Color.C_main
-  }
+    fontWeight: "700",
+    color: Color.C_main,
+  },
+  buttonActionLayer: {
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonText: {
+    fontSize: Font.Font_X,
+    color: Color.C_white,
+    fontWeight: "500",
+  },
 });

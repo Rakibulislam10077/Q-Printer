@@ -9,7 +9,6 @@ import CommonHeader from "../../components/common/commonHeader/CommonHeader";
 import TopBrand from "./topBrand/TopBrand";
 import AllBrand from "./allBrand/AllBrand";
 
-
 const logodata = [
   {
     id: 1,
@@ -38,31 +37,27 @@ const Brand = () => {
     <SafeAreaView style={brandStyle.container}>
       <CommonHeader title="Brand" />
       {/* body container */}
-        <ScrollView>
-      <View style={brandStyle.bodyContainer}>
-        <Text style={brandStyle.topBrandText}>Top Brand</Text>
-        {/* top brand section  */}
-        <FlatList
-          horizontal
-          data={logodata}
-          renderItem={({ item }) => <TopBrand item={item} />}
-        />
-
-        {/* all brand container */}
-        <View style={brandStyle.allBrandContainer}>
-          <Text style={brandStyle.allBrandText}>All Brand</Text>
-          <View style={brandStyle.allCartContainer}>
-          {
-            logodata?.map(item => {
-              return(
-                <AllBrand key={item?.id} item={item}/>
-              )
-            })
-          }
+      <ScrollView>
+        <View style={brandStyle.bodyContainer}>
+          <Text style={brandStyle.topBrandText}>Top Brand</Text>
+          {/* top brand section  */}
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={logodata}
+            renderItem={({ item }) => <TopBrand item={item} />}
+          />
+          {/* all brand container */}
+          <View style={brandStyle.allBrandContainer}>
+            <Text style={brandStyle.allBrandText}>All Brand</Text>
+            <View style={brandStyle.allCartContainer}>
+              {logodata?.map((item) => {
+                return <AllBrand key={item?.id} item={item} />;
+              })}
+            </View>
           </View>
         </View>
-      </View>
-          </ScrollView>
+      </ScrollView>
     </SafeAreaView>
   );
 };

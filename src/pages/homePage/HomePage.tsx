@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import HomePageTopCon from "../../components/homePageTopCon/HomePageTopCon";
 import { homePageStyle } from "./HomePageStyle";
 import { Magnify, ThreeLine } from "../../constants/allSvg/AllSvg";
@@ -10,8 +10,11 @@ import Carousel from "../../components/carousel/Carousel";
 import OfferCart from "../../components/cart/offeredCart/OfferCart";
 import AllCart from "../../components/cart/allCart/AllCart";
 import { StatusBar } from "expo-status-bar";
+import Modal from "react-native-modal";
+import ModalContent from "./modalComponents/ModalContent";
 const HomePage = () => {
   const navigation: any = useNavigation();
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   return (
     <View style={{ flex: 1 }}>
       <StatusBar style="dark" backgroundColor="#fff" />
@@ -30,7 +33,11 @@ const HomePage = () => {
             <Magnify />
             <Text>Search Products</Text>
           </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.7} style={homePageStyle.threeLine}>
+          <TouchableOpacity
+            onPress={() => setIsModalVisible(true)}
+            activeOpacity={0.7}
+            style={homePageStyle.threeLine}
+          >
             <ThreeLine />
           </TouchableOpacity>
         </Animated.View>
@@ -43,6 +50,22 @@ const HomePage = () => {
         {/* all cart*/}
         <AllCart />
       </ScrollView>
+      <Modal
+        onBackdropPress={() => setIsModalVisible(false)}
+        onBackButtonPress={() => setIsModalVisible(false)}
+        swipeDirection="down"
+        onSwipeComplete={() => setIsModalVisible(!isModalVisible)}
+        animationIn="bounceInUp"
+        animationOut="bounceOutDown"
+        animationInTiming={100}
+        animationOutTiming={100}
+        isVisible={isModalVisible}
+        style={{ justifyContent: "flex-end", margin: 0 }}
+        backdropTransitionInTiming={100}
+        backdropTransitionOutTiming={100}
+      >
+        <ModalContent />
+      </Modal>
     </View>
   );
 };

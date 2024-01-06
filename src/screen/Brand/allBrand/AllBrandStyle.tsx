@@ -12,25 +12,25 @@ export const allBrandStyle = StyleSheet.create({
       width: 2,
       height: 1,
     },
+    shadowRadius: 5,
     shadowOpacity: 0.2,
-    shadowRadius: 8,
     padding: 10,
-    alignItems:'center',
-    marginBottom: 20
+    alignItems: "center",
+    marginBottom: 20,
   },
-  logo:{
+  logo: {
     width: 80,
     height: 80,
     marginBottom: 20,
   },
-  brandName:{
+  brandName: {
     marginBottom: 20,
     fontSize: Font.Font_X,
-    color: 'rgba(0,0,0,0.7)',
-    fontWeight: '600',
+    color: "rgba(0,0,0,0.7)",
+    fontWeight: "600",
   },
-  avilableProductText:{
+  avilableProductText: {
     fontSize: Font.Font_M,
-    color: 'rgba(0,0,0,0.6)',
-  }
+    color: "rgba(0,0,0,0.6)",
+  },
 });

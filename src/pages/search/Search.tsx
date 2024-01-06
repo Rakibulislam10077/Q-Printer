@@ -9,6 +9,7 @@ import React from "react";
 import { TextInput } from "react-native-gesture-handler";
 import {
   CartBag,
+  CartIcon,
   Goback,
   Magnify,
   ThreeLine,
@@ -19,7 +20,6 @@ import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 import { Color } from "../../constants/GlobalStyle";
 import Cart from "../../components/cart/allCart/Cart";
-
 
 const Search = () => {
   const navigation: any = useNavigation();
@@ -40,14 +40,17 @@ const Search = () => {
             placeholder="Search"
             placeholderTextColor={Color.C_H_black}
           />
-          <ThreeLine />
+          <TouchableOpacity activeOpacity={0.7}>
+            <ThreeLine />
+          </TouchableOpacity>
         </View>
         <TouchableOpacity
           onPress={() => navigation.navigate("MyCart")}
           activeOpacity={0.7}
           style={searchStyle.AddToCartContainer}
         >
-          <CartBag />
+          {/* <CartBag /> */}
+          <CartIcon />
         </TouchableOpacity>
       </View>
       {/* main body */}

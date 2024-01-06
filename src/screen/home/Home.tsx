@@ -9,6 +9,7 @@ const Home = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#ffffff" }}>
       <HomePage />
+      <StatusBar style="dark" backgroundColor={"white"} />
     </SafeAreaView>
   );
 };
