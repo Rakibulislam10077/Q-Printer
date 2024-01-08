@@ -20,12 +20,35 @@ import { Divider } from "react-native-paper";
 import { LinearGradient } from "expo-linear-gradient";
 import CommonHeader from "../../components/common/commonHeader/CommonHeader";
 import { Color } from "../../constants/GlobalStyle";
-import Animated, { FadeInUp } from "react-native-reanimated";
+import Animated, {
+  Easing,
+  FadeInUp,
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+  withTiming,
+} from "react-native-reanimated";
 
 const Summery: React.FC = () => {
   const navigation: any = useNavigation();
   const [isDown, setIsDown] = useState<boolean>(false);
   const [defaultLocation, setDefaultLocation] = useState<boolean>(false);
+  const height = useSharedValue(100);
+
+  const openBox = () => {
+    height.value = withTiming(isDown ? 100 : 370, {
+      duration: 450,
+      easing: Easing.inOut(Easing.ease),
+    });
+
+    setIsDown(!isDown);
+  };
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      height: height.value,
+    };
+  });
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <CommonHeader title="Checkout" />
@@ -69,6 +92,7 @@ const Summery: React.FC = () => {
             </View>
           </View>
           {/* location box */}
+
           <View style={summeryStyle.shiptoBox}>
             <Text style={summeryStyle.shipToText}>Ship to</Text>
             <View
@@ -84,7 +108,7 @@ const Summery: React.FC = () => {
             </View>
             <TouchableOpacity
               style={summeryStyle.shipToItem}
-              onPress={() => setIsDown(!isDown)}
+              onPress={() => openBox()}
             >
               {!isDown ? (
                 <View style={summeryStyle.emptyRadio}></View>
@@ -101,9 +125,12 @@ const Summery: React.FC = () => {
             {isDown && (
               <Animated.View
                 // entering={FadeInUp.delay(50).duration(500)}
-                style={{ marginTop: 20 }}
+                style={[{ marginTop: 20 }, animatedStyle]}
               >
-                <View style={summeryStyle.nameInputContainer}>
+                <Animated.View
+                  entering={FadeInUp.delay(50).duration(500)}
+                  style={summeryStyle.nameInputContainer}
+                >
                   <TextInput
                     style={summeryStyle.nameInput}
                     placeholder="First Name"
@@ -112,31 +139,40 @@ const Summery: React.FC = () => {
                     style={summeryStyle.nameInput}
                     placeholder="Last Name"
                   />
-                </View>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={summeryStyle.inputBox}
-                >
-                  <Text style={summeryStyle.inputText}>Country</Text>
-                  <Dropdown />
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={summeryStyle.inputBox}
-                >
-                  <Text style={summeryStyle.inputText}>District</Text>
-                  <Dropdown />
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={summeryStyle.inputBox}
-                >
-                  <Text style={summeryStyle.inputText}>Street address</Text>
-                </TouchableOpacity>
-                <View>
+                </Animated.View>
+                <Animated.View entering={FadeInUp.delay(50).duration(510)}>
+                  <TouchableOpacity
+                    activeOpacity={0.7}
+                    style={summeryStyle.inputBox}
+                  >
+                    <Text style={summeryStyle.inputText}>Country</Text>
+                    <Dropdown />
+                  </TouchableOpacity>
+                </Animated.View>
+                <Animated.View entering={FadeInUp.delay(50).duration(520)}>
+                  <TouchableOpacity
+                    activeOpacity={0.7}
+                    style={summeryStyle.inputBox}
+                  >
+                    <Text style={summeryStyle.inputText}>District</Text>
+                    <Dropdown />
+                  </TouchableOpacity>
+                </Animated.View>
+                <Animated.View entering={FadeInUp.delay(50).duration(530)}>
+                  <TouchableOpacity
+                    activeOpacity={0.7}
+                    style={summeryStyle.inputBox}
+                  >
+                    <Text style={summeryStyle.inputText}>Street address</Text>
+                  </TouchableOpacity>
+                </Animated.View>
+                <Animated.View entering={FadeInUp.delay(50).duration(540)}>
                   <TextInput placeholder="" />
-                </View>
-                <View style={summeryStyle.nameInputContainer}>
+                </Animated.View>
+                <Animated.View
+                  entering={FadeInUp.delay(50).duration(550)}
+                  style={summeryStyle.nameInputContainer}
+                >
                   <TextInput
                     style={summeryStyle.nameInput}
                     placeholder="Town & City"
@@ -145,27 +181,31 @@ const Summery: React.FC = () => {
                     style={summeryStyle.nameInput}
                     placeholder="Zip Code"
                   />
-                </View>
-                <TextInput
-                  style={summeryStyle.numberInput}
-                  placeholder="Town & City"
-                />
-                <TouchableOpacity
-                  style={[summeryStyle.shipToItem, { marginTop: 20 }]}
-                  onPress={() => setDefaultLocation(!defaultLocation)}
-                >
-                  {!defaultLocation ? (
-                    <View style={summeryStyle.emptyRadio}></View>
-                  ) : (
-                    <Image
-                      resizeMode="contain"
-                      source={require("../../../assets/image/Radio.png")}
-                    />
-                  )}
-                  <Text style={[summeryStyle.shipToItemText]}>
-                    Save as default address
-                  </Text>
-                </TouchableOpacity>
+                </Animated.View>
+                <Animated.View entering={FadeInUp.delay(50).duration(560)}>
+                  <TextInput
+                    style={summeryStyle.numberInput}
+                    placeholder="Town & City"
+                  />
+                </Animated.View>
+                <Animated.View entering={FadeInUp.delay(50).duration(570)}>
+                  <TouchableOpacity
+                    style={[summeryStyle.shipToItem, { marginTop: 20 }]}
+                    onPress={() => setDefaultLocation(!defaultLocation)}
+                  >
+                    {!defaultLocation ? (
+                      <View style={summeryStyle.emptyRadio}></View>
+                    ) : (
+                      <Image
+                        resizeMode="contain"
+                        source={require("../../../assets/image/Radio.png")}
+                      />
+                    )}
+                    <Text style={[summeryStyle.shipToItemText]}>
+                      Save as default address
+                    </Text>
+                  </TouchableOpacity>
+                </Animated.View>
               </Animated.View>
             )}
           </View>
