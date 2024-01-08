@@ -3,7 +3,7 @@ import { Color, Font } from "../../../constants/GlobalStyle";
 
 export const modalStyle = StyleSheet.create({
   container: {
-    // height: 400,
+    height: 500,
     borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
     backgroundColor: Color.C_white,
@@ -45,6 +45,9 @@ export const modalStyle = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     // marginBottom: 10,
+    borderWidth: 1,
+    borderColor: Color.C_border,
+    borderRadius: 5,
   },
   inputBox: {
     width: "100%",
@@ -57,6 +60,10 @@ export const modalStyle = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     marginBottom: 40,
+    zIndex: -0,
+    // backgroundColor: "red",
+    backgroundColor: Color.C_white,
+    position: "relative",
   },
   input: {
     height: 40,
@@ -73,5 +80,28 @@ export const modalStyle = StyleSheet.create({
     paddingHorizontal: 10,
     flexDirection: "row",
     alignItems: "center",
+  },
+  itemCon: {
+    backgroundColor: "#fff",
+    shadowColor: Color.C_shadow,
+    shadowOffset: {
+      width: 2,
+      height: 1,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
+    elevation: 15,
+    position: "absolute",
+    top: -38,
+    width: "100%",
+    zIndex: 100,
+    height: 220,
+    borderRadius: 10,
+  },
+  magnifyCon: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: 60,
+    justifyContent: "space-between",
   },
 });

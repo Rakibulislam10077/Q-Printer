@@ -7,12 +7,13 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { modalStyle } from "./ModalContentStyle";
-import { Close, Dropdown } from "../../../constants/allSvg/AllSvg";
+import { Close, Dropdown, Magnify } from "../../../constants/allSvg/AllSvg";
 
 const ModalContent = () => {
   const [isBrandClicked, setIsBrandClicked] = useState<boolean>(false);
   const [isSeriesClicked, setIsSeriesClicked] = useState<boolean>(false);
   const [isModelClicked, setIsModelClicked] = useState<boolean>(false);
+  const [isMagnifyClicked, setIsMagnifyClicked] = useState<boolean>(false);
 
   //   brand function
   const brandFunction = () => {
@@ -30,18 +31,6 @@ const ModalContent = () => {
     setIsBrandClicked(false);
     setIsSeriesClicked(false);
   };
-  //   useEffect(() => {
-  //     if (isBrandClicked === true) {
-  //       setIsSeriesClicked(false);
-  //       setIsModelClicked(false);
-  //     } else if (isSeriesClicked === true) {
-  //       setIsBrandClicked(false);
-  //       setIsModelClicked(false);
-  //     } else if (isModelClicked === true) {
-  //       setIsBrandClicked(false);
-  //       setIsSeriesClicked(false);
-  //     }
-  //   }, []);
 
   return (
     <View style={modalStyle.container}>
@@ -52,71 +41,84 @@ const ModalContent = () => {
         You can find the right Cartridges for your Printer
       </Text>
       {/* printer Brand container */}
-      <View style={[isBrandClicked === true && modalStyle.inputBoxMainCon]}>
-        <TouchableOpacity
-          onPress={() => brandFunction()}
-          activeOpacity={0.7}
-          style={[
-            isBrandClicked === true
-              ? modalStyle.activeInputBox
-              : modalStyle.inputBox,
-          ]}
-        >
-          <Text>Printer Brand</Text>
-          {isBrandClicked === true ? (
+      {/* <View style={[isBrandClicked === true && modalStyle.inputBoxMainCon]}> */}
+      {/* <View> */}
+      <TouchableOpacity
+        onPress={() => brandFunction()}
+        activeOpacity={0.7}
+        style={[
+          // modalStyle.activeInputBox,
+          modalStyle.inputBox,
+        ]}
+      >
+        <Text>Printer Brand</Text>
+        {isBrandClicked === true ? (
+          <View style={modalStyle.magnifyCon}>
+            <TouchableOpacity
+              onPress={() => setIsMagnifyClicked(!isMagnifyClicked)}
+              activeOpacity={0.7}
+            >
+              <Magnify />
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => setIsBrandClicked(false)}>
               <Close />
             </TouchableOpacity>
-          ) : (
-            <Dropdown />
-          )}
-        </TouchableOpacity>
-        {isBrandClicked === true && (
-          <View>
-            <TextInput style={modalStyle.input} placeholder="Search" />
-            <View style={{ height: 210 }}>
-              <ScrollView>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={modalStyle.filteredItem}>
-                  <Text>hello</Text>
-                </TouchableOpacity>
-              </ScrollView>
-            </View>
           </View>
+        ) : (
+          <Dropdown />
         )}
-      </View>
+      </TouchableOpacity>
+      {isBrandClicked === true && (
+        <View>
+          <View style={modalStyle.itemCon}>
+            {isMagnifyClicked && (
+              <TextInput style={modalStyle.input} placeholder="Search" />
+            )}
+            <ScrollView>
+              <TouchableOpacity
+                onPress={() => setIsBrandClicked(false)}
+                style={modalStyle.filteredItem}
+              >
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={modalStyle.filteredItem}>
+                <Text>hello</Text>
+              </TouchableOpacity>
+            </ScrollView>
+          </View>
+        </View>
+      )}
+      {/* </View> */}
       {/* ======================== */}
       <View style={[isSeriesClicked === true && modalStyle.inputBoxMainCon]}>
         <TouchableOpacity
@@ -128,7 +130,7 @@ const ModalContent = () => {
               : modalStyle.inputBox,
           ]}
         >
-          <Text>Printer Brand</Text>
+          <Text>Printer Series</Text>
           {isSeriesClicked === true ? (
             <TouchableOpacity onPress={() => setIsSeriesClicked(false)}>
               <Close />
@@ -140,7 +142,10 @@ const ModalContent = () => {
         {isSeriesClicked === true && (
           <View>
             <TextInput style={modalStyle.input} placeholder="Search" />
-            <TouchableOpacity style={modalStyle.filteredItem}>
+            <TouchableOpacity
+              onPress={() => setIsSeriesClicked(false)}
+              style={modalStyle.filteredItem}
+            >
               <Text>hello</Text>
             </TouchableOpacity>
             <TouchableOpacity style={modalStyle.filteredItem}>
@@ -173,7 +178,7 @@ const ModalContent = () => {
               : modalStyle.inputBox,
           ]}
         >
-          <Text>Printer Brand</Text>
+          <Text>Printer Model</Text>
           {isModelClicked === true ? (
             <TouchableOpacity onPress={() => setIsModelClicked(false)}>
               <Close />
@@ -185,7 +190,10 @@ const ModalContent = () => {
         {isModelClicked === true && (
           <View>
             <TextInput style={modalStyle.input} placeholder="Search" />
-            <TouchableOpacity style={modalStyle.filteredItem}>
+            <TouchableOpacity
+              onPress={() => setIsModelClicked(false)}
+              style={modalStyle.filteredItem}
+            >
               <Text>hello</Text>
             </TouchableOpacity>
             <TouchableOpacity style={modalStyle.filteredItem}>

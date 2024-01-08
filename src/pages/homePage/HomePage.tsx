@@ -12,6 +12,9 @@ import AllCart from "../../components/cart/allCart/AllCart";
 import { StatusBar } from "expo-status-bar";
 import Modal from "react-native-modal";
 import ModalContent from "./modalComponents/ModalContent";
+import Brand_Skeleton from "../../components/allSkeleton/Home_page_brand_Skeleton/Brand_Skeleton";
+import Carousel_Skeleton from "../../components/allSkeleton/carousel_Skeleton/Carousel_Skeleton";
+import Cart_Skeleton from "../../components/allSkeleton/cart_Skeleton/Cart_Skeleton";
 const HomePage = () => {
   const navigation: any = useNavigation();
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
@@ -43,12 +46,16 @@ const HomePage = () => {
         </Animated.View>
         {/* brand logo container */}
         <BrandInHome />
+        {/* <Brand_Skeleton /> */}
         {/* custom carousel  */}
         <Carousel />
+        {/* <Carousel_Skeleton /> */}
         {/* offer cart section */}
         <OfferCart />
+        {/* <Cart_Skeleton /> */}
         {/* all cart*/}
         <AllCart />
+        {/* <Cart_Skeleton /> */}
       </ScrollView>
       <Modal
         onBackdropPress={() => setIsModalVisible(false)}
