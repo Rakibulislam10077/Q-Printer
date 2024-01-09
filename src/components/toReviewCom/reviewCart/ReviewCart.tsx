@@ -5,6 +5,7 @@ import { Divider } from "react-native-paper";
 import { LinearGradient } from "expo-linear-gradient";
 import Modal from "react-native-modal";
 import { RatingStar } from "../../../constants/allSvg/AllSvg";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
 const ReviewCart = () => {
   const [isModalVisible, setIsModalVisible] = useState<boolean>();
@@ -13,7 +14,10 @@ const ReviewCart = () => {
     setIsModalVisible(!isModalVisible);
   };
   return (
-    <View style={reviewCartStyle.container}>
+    <Animated.View
+      entering={FadeInDown.delay(50).duration(500)}
+      style={reviewCartStyle.container}
+    >
       <Text style={reviewCartStyle.processDate}>Purchased on 12 Jul 2023</Text>
       <Divider style={reviewCartStyle.dividerStyle} />
       <View style={reviewCartStyle.imgAndTitleCon}>
@@ -92,7 +96,7 @@ const ReviewCart = () => {
           </LinearGradient>
         </View>
       </Modal>
-    </View>
+    </Animated.View>
   );
 };
 

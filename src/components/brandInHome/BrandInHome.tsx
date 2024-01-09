@@ -1,6 +1,7 @@
 import { View, Text, FlatList } from "react-native";
 import React from "react";
 import Brand from "./Brand";
+import Animated, { FadeInLeft, FadeInRight } from "react-native-reanimated";
 
 const logodata = [
   {
@@ -27,7 +28,8 @@ const logodata = [
 const BrandInHome = () => {
   return (
     <View>
-      <FlatList
+      <Animated.FlatList
+        entering={FadeInRight.delay(50).duration(245)}
         horizontal
         showsHorizontalScrollIndicator={false}
         data={logodata}

@@ -4,11 +4,15 @@ import { orderPlaceCartStyle } from "./OrderPlaceCartStyle";
 import { Divider } from "react-native-paper";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
 const OrderPlaceCart = () => {
   const navigation: any = useNavigation();
   return (
-    <View style={orderPlaceCartStyle.container}>
+    <Animated.View
+      entering={FadeInDown.delay(50).duration(500)}
+      style={orderPlaceCartStyle.container}
+    >
       {/* top section */}
       <View style={orderPlaceCartStyle.topSectionCon}>
         <View>
@@ -69,7 +73,7 @@ const OrderPlaceCart = () => {
           </TouchableOpacity>
         </LinearGradient>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 

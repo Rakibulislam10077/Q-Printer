@@ -16,6 +16,13 @@ import CommonHeader from "../../components/common/commonHeader/CommonHeader";
 import { paymentMethodStyle } from "./PaymentMethodStyle";
 import { Color } from "../../constants/GlobalStyle";
 import { LinearGradient } from "expo-linear-gradient";
+import Animated, {
+  FadeInUp,
+  LightSpeedInRight,
+  RotateInDownLeft,
+  SlideInDown,
+  SlideInUp,
+} from "react-native-reanimated";
 
 const PaymentMethod = () => {
   const navigation: any = useNavigation();
@@ -29,7 +36,10 @@ const PaymentMethod = () => {
             Payment Methods
           </Text>
 
-          <View style={paymentMethodStyle.PaymentCartContainer}>
+          <Animated.View
+            entering={FadeInUp.delay(50).duration(500)}
+            style={paymentMethodStyle.PaymentCartContainer}
+          >
             <View style={paymentMethodStyle.dabidCartTextAndArrowCon}>
               <View style={paymentMethodStyle.cartImgAndTextCon}>
                 <Image
@@ -40,8 +50,12 @@ const PaymentMethod = () => {
               </View>
               <View style={paymentMethodStyle.radio} />
             </View>
-          </View>
-          <View style={paymentMethodStyle.PaymentCartContainer}>
+          </Animated.View>
+          {/* ============================= */}
+          <Animated.View
+            entering={FadeInUp.delay(50).duration(500)}
+            style={paymentMethodStyle.PaymentCartContainer}
+          >
             <View style={paymentMethodStyle.dabidCartTextAndArrowCon}>
               <View style={paymentMethodStyle.cartImgAndTextCon}>
                 <Image
@@ -109,7 +123,7 @@ const PaymentMethod = () => {
                 Securly save card and details
               </Text>
             </View>
-          </View>
+          </Animated.View>
           <View style={paymentMethodStyle.PaymentCartContainer}>
             <View style={paymentMethodStyle.dabidCartTextAndArrowCon}>
               <View style={paymentMethodStyle.cartImgAndTextCon}>
@@ -140,7 +154,7 @@ const PaymentMethod = () => {
               alignItems: "center",
               justifyContent: "center",
               borderRadius: 25,
-              height: 40,
+              height: 50,
             }}
           >
             <TouchableOpacity

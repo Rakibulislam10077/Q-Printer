@@ -10,6 +10,7 @@ import { navigation } from "../../constants/orderHis/orderHCustomNav";
 import Packaging from "../../components/orderHistoryComponents/Packeaging/Packaging";
 import Shipping from "../../components/orderHistoryComponents/shipping/Shipping";
 import OrderReview from "../../components/orderHistoryComponents/ordeReview/OrderReview";
+import Animated, { FadeInDown } from "react-native-reanimated";
 const OrderHistory = () => {
   const [activeTab, setActiveTab] = useState<null>(null);
   const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
@@ -36,7 +37,8 @@ const OrderHistory = () => {
       <View style={orderHistoryStyle.bodyContainer}>
         {/* navigation container */}
         <View style={orderHistoryStyle.navCon}>
-          <FlatList
+          <Animated.FlatList
+            entering={FadeInDown.delay(50).duration(500)}
             data={navigation}
             showsHorizontalScrollIndicator={false}
             horizontal

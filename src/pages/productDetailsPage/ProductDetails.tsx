@@ -34,6 +34,7 @@ import { productDetailsStyle } from "./ProductDetailsStyle";
 import ProductSpec from "../../components/productSpec/ProductSpec";
 import ProductDesc from "../../components/productDesc/ProductDesc";
 import ProductReviews from "../../components/productReviews/ProductReviews";
+import { LinearGradient } from "expo-linear-gradient";
 
 const HEADER_HEIGHT = 200;
 const ProductDetails = (props: any) => {
@@ -65,7 +66,7 @@ const ProductDetails = (props: any) => {
         <Animated.ScrollView>
           <Animated.View style={productDetailsStyle.imageAndNavContainer}>
             <View style={productDetailsStyle.navigationAndFavCon}>
-              <Animated.View entering={FadeInLeft.duration(1000).delay(120)}>
+              <Animated.View entering={FadeInLeft.duration(500).delay(50)}>
                 <TouchableOpacity
                   activeOpacity={0.7}
                   onPress={() => navigation.goBack()}
@@ -74,7 +75,7 @@ const ProductDetails = (props: any) => {
                   <Goback />
                 </TouchableOpacity>
               </Animated.View>
-              <Animated.View entering={FadeInRight.duration(1000).delay(120)}>
+              <Animated.View entering={FadeInRight.duration(500).delay(50)}>
                 <TouchableOpacity style={productDetailsStyle.navAndFav}>
                   <FavIcon />
                 </TouchableOpacity>
@@ -100,7 +101,7 @@ const ProductDetails = (props: any) => {
           </Animated.View>
           <View style={productDetailsStyle.description}>
             <Animated.View
-              entering={FadeInDown.delay(90).duration(900)}
+              entering={FadeInDown.delay(50).duration(500)}
               style={productDetailsStyle.ratingContainer}
             >
               <View style={productDetailsStyle.inStockContainer}>
@@ -113,7 +114,7 @@ const ProductDetails = (props: any) => {
               </Text>
             </Animated.View>
             <Animated.Text
-              entering={FadeInDown.delay(100).duration(950)}
+              entering={FadeInDown.delay(50).duration(500)}
               numberOfLines={2}
               style={productDetailsStyle.title}
             >
@@ -121,7 +122,7 @@ const ProductDetails = (props: any) => {
               Printer
             </Animated.Text>
             <Animated.View
-              entering={FadeInDown.delay(110).duration(1000)}
+              entering={FadeInDown.delay(50).duration(500)}
               style={productDetailsStyle.productIdandDisc}
             >
               <View style={productDetailsStyle.brandLogoContainer}>
@@ -133,7 +134,7 @@ const ProductDetails = (props: any) => {
               <Text style={productDetailsStyle.brandName}>Brother</Text>
             </Animated.View>
             <Animated.View
-              entering={FadeInDown.delay(120).duration(1050)}
+              entering={FadeInDown.delay(50).duration(500)}
               style={productDetailsStyle.priceContainer}
             >
               <View style={productDetailsStyle.priceContainer}>
@@ -237,9 +238,16 @@ const ProductDetails = (props: any) => {
             </Text>
           </View>
           <View style={productDetailsStyle.buyButtonAndCartCon}>
-            <TouchableOpacity style={productDetailsStyle.buyButton}>
-              <Text style={productDetailsStyle.buttonText}>Buy Now</Text>
-            </TouchableOpacity>
+            <LinearGradient
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+              colors={["rgba(200, 59, 98, 0.80)", "rgba(127, 53, 205, 0.80)"]}
+              style={productDetailsStyle.linearButton}
+            >
+              <TouchableOpacity style={productDetailsStyle.buyButton}>
+                <Text style={productDetailsStyle.buttonText}>Buy Now</Text>
+              </TouchableOpacity>
+            </LinearGradient>
             <TouchableOpacity
               activeOpacity={0.7}
               onPress={() => navigation.navigate("MyCart")}

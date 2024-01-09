@@ -212,14 +212,16 @@ export const productDetailsStyle = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
+  linearButton: {
+    height: 50,
+    borderRadius: 30,
+  },
   buyButton: {
     height: 50,
     width: 120,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
-    backgroundColor: Color.C_main,
-    marginRight: 10,
   },
   buttonText: {
     color: Color.C_white,
@@ -232,5 +234,6 @@ export const productDetailsStyle = StyleSheet.create({
     backgroundColor: "rgba(35, 63, 163, 0.10)",
     alignItems: "center",
     justifyContent: "center",
+    marginLeft: 10,
   },
 });

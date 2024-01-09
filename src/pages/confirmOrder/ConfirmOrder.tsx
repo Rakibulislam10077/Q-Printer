@@ -12,6 +12,15 @@ import { confirmOrderStyle } from "./ConfirmOrderStyle";
 import { SuccessPageLogo } from "../../constants/allSvg/AllSvg";
 import { Divider } from "react-native-paper";
 import { LinearGradient } from "expo-linear-gradient";
+import Animated, {
+  BounceIn,
+  FadeInDown,
+  RotateInDownLeft,
+  RotateInDownRight,
+  RotateInUpLeft,
+  RotateOutDownLeft,
+  SlideInUp,
+} from "react-native-reanimated";
 
 const ConfirmOrder = () => {
   return (
@@ -19,8 +28,10 @@ const ConfirmOrder = () => {
       <CommonHeader title="Booking Confirmation" />
       <ScrollView style={{ flex: 1, paddingBottom: 100 }}>
         <View style={confirmOrderStyle.bodyContainer}>
-          <View style={confirmOrderStyle.logoContainer}>
-            <SuccessPageLogo />
+          <Animated.View style={confirmOrderStyle.logoContainer}>
+            <Animated.View entering={BounceIn.delay(100).duration(600)}>
+              <SuccessPageLogo />
+            </Animated.View>
             <Text style={confirmOrderStyle.orderPayment}>
               Order Payment Success
             </Text>
@@ -28,18 +39,19 @@ const ConfirmOrder = () => {
               Your payment has been processed? Details of transaction are
               included below
             </Text>
-          </View>
+          </Animated.View>
           {/* ==================== */}
           <View>
-            <View>
-              <View style={confirmOrderStyle.informationCon}>
+            <Animated.View entering={FadeInDown.delay(50).duration(500)}>
+              <Animated.View style={confirmOrderStyle.informationCon}>
                 <Text style={confirmOrderStyle.amountTextAndother}>
                   Total Amount Paid
                 </Text>
                 <Text style={confirmOrderStyle.totalPriceAndother}>QR 700</Text>
-              </View>
+              </Animated.View>
+              {/* ============================ */}
               <Divider />
-              <View style={confirmOrderStyle.informationCon}>
+              <Animated.View style={confirmOrderStyle.informationCon}>
                 <Text style={confirmOrderStyle.amountTextAndother}>
                   Pay with
                 </Text>
@@ -56,16 +68,17 @@ const ConfirmOrder = () => {
                     Debit/VisaCard
                   </Text>
                 </View>
-              </View>
+              </Animated.View>
+              {/* ================================ */}
               <Divider />
-              <View style={confirmOrderStyle.informationCon}>
+              <Animated.View style={confirmOrderStyle.informationCon}>
                 <Text style={confirmOrderStyle.amountTextAndother}>
                   Transaction Date
                 </Text>
                 <Text style={confirmOrderStyle.totalPriceAndother}>
                   22 Nov, 2023
                 </Text>
-              </View>
+              </Animated.View>
               <Divider />
               <View style={confirmOrderStyle.informationCon}>
                 <Text style={confirmOrderStyle.amountTextAndother}>
@@ -75,7 +88,7 @@ const ConfirmOrder = () => {
                   1574OISHD514
                 </Text>
               </View>
-            </View>
+            </Animated.View>
           </View>
           <TouchableOpacity style={confirmOrderStyle.viewOrderButton}>
             <Text style={confirmOrderStyle.buttonText}>View Order</Text>
@@ -94,9 +107,9 @@ const ConfirmOrder = () => {
           borderRadius: 25,
           // position: "absolute",
           // bottom: 30,
-          marginVertical: 30,
+          marginBottom: 10,
           backgroundColor: "transparent",
-          height: 40,
+          height: 50,
         }}
       >
         <TouchableOpacity style={confirmOrderStyle.buttonActionLayer}>

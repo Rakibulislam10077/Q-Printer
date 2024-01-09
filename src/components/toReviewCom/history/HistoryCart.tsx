@@ -5,6 +5,7 @@ import { historyStyle } from "./HistoryCartStyle";
 import { LinearGradient } from "expo-linear-gradient";
 import { RatingStar } from "../../../constants/allSvg/AllSvg";
 import Modal from "react-native-modal";
+import Animated, { FadeInDown } from "react-native-reanimated";
 const HistoryCart = () => {
   const [isModalVisible, setIsModalVisible] = useState<boolean>();
 
@@ -13,7 +14,10 @@ const HistoryCart = () => {
   };
 
   return (
-    <View style={historyStyle.container}>
+    <Animated.View
+      entering={FadeInDown.delay(50).duration(500)}
+      style={historyStyle.container}
+    >
       <Text style={historyStyle.processDate}>Purchased on 12 Jul 2023</Text>
       <Divider style={historyStyle.dividerStyle} />
       <View style={historyStyle.imgAndTitleCon}>
@@ -97,7 +101,7 @@ const HistoryCart = () => {
           </LinearGradient>
         </View>
       </Modal>
-    </View>
+    </Animated.View>
   );
 };
 

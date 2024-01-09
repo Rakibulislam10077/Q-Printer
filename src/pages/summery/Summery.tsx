@@ -21,7 +21,10 @@ import { LinearGradient } from "expo-linear-gradient";
 import CommonHeader from "../../components/common/commonHeader/CommonHeader";
 import { Color } from "../../constants/GlobalStyle";
 import Animated, {
+  BounceIn,
   Easing,
+  FadeInDown,
+  FadeInLeft,
   FadeInUp,
   useAnimatedStyle,
   useSharedValue,
@@ -54,9 +57,12 @@ const Summery: React.FC = () => {
       <CommonHeader title="Checkout" />
       {/* ===== body content======= */}
       <ScrollView>
-        <View style={{ paddingTop: 20, paddingBottom: 100 }}>
+        <Animated.View style={{ paddingTop: 20, paddingBottom: 100 }}>
           {/* summery item box */}
-          <View style={summeryStyle.topSummeryBox}>
+          <Animated.View
+            style={summeryStyle.topSummeryBox}
+            entering={FadeInLeft.delay(50).duration(500)}
+          >
             <Text style={summeryStyle.summeryTitle}>Order Summary</Text>
             <View style={summeryStyle.summeryItemBox}>
               <Text style={summeryStyle.summeryItemNormalText}>
@@ -90,10 +96,13 @@ const Summery: React.FC = () => {
               </Text>
               <Text style={summeryStyle.summeryCurrency}>QR 4545.00</Text>
             </View>
-          </View>
+          </Animated.View>
           {/* location box */}
 
-          <View style={summeryStyle.shiptoBox}>
+          <Animated.View
+            style={summeryStyle.shiptoBox}
+            entering={FadeInDown.delay(50).duration(500)}
+          >
             <Text style={summeryStyle.shipToText}>Ship to</Text>
             <View
               style={[
@@ -208,8 +217,8 @@ const Summery: React.FC = () => {
                 </Animated.View>
               </Animated.View>
             )}
-          </View>
-        </View>
+          </Animated.View>
+        </Animated.View>
       </ScrollView>
       <LinearGradient
         start={{ x: 0, y: 0 }}

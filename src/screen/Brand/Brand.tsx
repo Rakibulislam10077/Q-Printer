@@ -8,6 +8,11 @@ import { brandStyle } from "./BrandStyle";
 import CommonHeader from "../../components/common/commonHeader/CommonHeader";
 import TopBrand from "./topBrand/TopBrand";
 import AllBrand from "./allBrand/AllBrand";
+import Animated, {
+  FadeInDown,
+  FadeInLeft,
+  FadeInRight,
+} from "react-native-reanimated";
 
 const logodata = [
   {
@@ -41,7 +46,8 @@ const Brand = () => {
         <View style={brandStyle.bodyContainer}>
           <Text style={brandStyle.topBrandText}>Top Brand</Text>
           {/* top brand section  */}
-          <FlatList
+          <Animated.FlatList
+            entering={FadeInRight.delay(50).duration(500)}
             horizontal
             showsHorizontalScrollIndicator={false}
             data={logodata}
@@ -50,11 +56,17 @@ const Brand = () => {
           {/* all brand container */}
           <View style={brandStyle.allBrandContainer}>
             <Text style={brandStyle.allBrandText}>All Brand</Text>
-            <View style={brandStyle.allCartContainer}>
+            <Animated.View
+              entering={FadeInDown.delay(50)
+                .duration(500)
+                .damping(20)
+                .springify()}
+              style={brandStyle.allCartContainer}
+            >
               {logodata?.map((item) => {
                 return <AllBrand key={item?.id} item={item} />;
               })}
-            </View>
+            </Animated.View>
           </View>
         </View>
       </ScrollView>

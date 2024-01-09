@@ -47,6 +47,7 @@ export const confirmOrderStyle = StyleSheet.create({
     alignItems: "center",
     marginTop: 50,
     alignSelf: "center",
+    marginBottom: 50,
   },
   buttonText: {
     fontSize: Font.Font_M,

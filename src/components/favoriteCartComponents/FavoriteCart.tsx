@@ -2,10 +2,14 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { favoriteCartStyle } from "./FavoriteCartStyle";
 import { CartIcon, RedClose } from "../../constants/allSvg/AllSvg";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
 const FavoriteCart = (item: any) => {
   return (
-    <View style={favoriteCartStyle.container}>
+    <Animated.View
+      entering={FadeInDown.delay(50).duration(500)}
+      style={favoriteCartStyle.container}
+    >
       <View style={favoriteCartStyle.itemCon}>
         <View style={favoriteCartStyle.imgCon}>
           <Image style={favoriteCartStyle.img} source={item?.item?.img} />
@@ -32,7 +36,7 @@ const FavoriteCart = (item: any) => {
           </View>
         </View>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 

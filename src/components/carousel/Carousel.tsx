@@ -5,28 +5,26 @@ import Pagination from "./Pagination";
 
 const logodata = [
   {
-      id: 1,
-      img: require('../../../assets/image/adidas.png')
+    id: 1,
+    img: require("../../../assets/image/adidas.png"),
   },
   {
-      id: 2,
-      img: require('../../../assets/image/adidas.png')
+    id: 2,
+    img: require("../../../assets/image/adidas.png"),
   },
   {
-      id: 3,
-      img: require('../../../assets/image/adidas.png')
+    id: 3,
+    img: require("../../../assets/image/adidas.png"),
   },
   {
-      id: 4,
-      img: require('../../../assets/image/adidas.png')
+    id: 4,
+    img: require("../../../assets/image/adidas.png"),
   },
   {
-      id: 5,
-      img: require('../../../assets/image/adidas.png')
+    id: 5,
+    img: require("../../../assets/image/adidas.png"),
   },
 ];
-
-
 
 const Carousel = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -51,11 +49,9 @@ const Carousel = () => {
     setIndex(viewableItems[0].index);
   }).current;
 
-
-  
   return (
     <View style={{ width: "100%", marginTop: 10 }}>
-      <FlatList
+      <Animated.FlatList
         data={logodata}
         horizontal
         pagingEnabled

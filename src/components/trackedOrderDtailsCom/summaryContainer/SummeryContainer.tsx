@@ -1,10 +1,11 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { summerContainerStyle } from "./SummeryContainerStyle";
+import Animated, { FadeInLeft } from "react-native-reanimated";
 
 const SummeryContainer = () => {
   return (
-    <View style={summerContainerStyle.container}>
+    <Animated.View style={summerContainerStyle.container}>
       <Text style={summerContainerStyle.title}>Order Summery</Text>
       <View style={summerContainerStyle.infoCon}>
         <Text style={summerContainerStyle.leftText}>
@@ -32,7 +33,7 @@ const SummeryContainer = () => {
           <Text style={summerContainerStyle.totalPrice}> QR 345.00</Text>
         </Text>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 

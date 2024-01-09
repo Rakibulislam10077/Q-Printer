@@ -25,7 +25,7 @@ const HomePage = () => {
       {/* Body container */}
       <ScrollView style={{ flex: 1 }}>
         <Animated.View
-          entering={FadeInLeft.delay(200).duration(500)}
+          entering={FadeInLeft.delay(50).duration(140)}
           style={homePageStyle.searchAndthreelineCon}
         >
           <TouchableOpacity
